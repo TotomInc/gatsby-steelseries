@@ -1,12 +1,16 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "gatsby-prismic-steelseries",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
-  "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "description": "A replica of the SteelSeries website made with Gatsby and Prismic CMS.",
+  "version": "0.0.0",
+  "author": "TotomInc <cazade.thomas@gmail.com>",
   "dependencies": {
-    "gatsby": "^2.25.3",
+    "@emotion/core": "^10.0",
+    "@emotion/styled": "^11.0.0",
+    "@prismicio/gatsby-source-prismic-graphql": "^3.6.13",
+    "gatsby": "2.24.11",
     "gatsby-image": "^2.4.21",
+    "gatsby-plugin-emotion": "^4.4.0",
     "gatsby-plugin-manifest": "^2.5.2",
     "gatsby-plugin-offline": "^3.3.3",
     "gatsby-plugin-react-helmet": "^3.3.14",
@@ -19,26 +23,30 @@
     "react-helmet": "^6.1.0"
   },
   "devDependencies": {
-    "prettier": "2.1.2"
+    "@totominc/eslint-config-react": "^0.2.2",
+    "babel-eslint": "^10.0.0",
+    "eslint": "^7.13.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-config-prettier": "^6.12.0",
+    "eslint-plugin-eslint-comments": "^3.2.0",
+    "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^24.1.0",
+    "eslint-plugin-jsx-a11y": "^6.4.1",
+    "eslint-plugin-prettier": "^3.1.4",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-react": "^7.21.5",
+    "eslint-plugin-react-hooks": "^4.2.0",
+    "prettier": "^2.1.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
+  "resolutions": {
+    "gatsby-source-graphql-universal": "3.3.0"
+  },
   "scripts": {
     "build": "gatsby build",
     "develop": "gatsby develop",
     "format": "prettier --write \"**/*.{js,jsx,ts,tsx,json,md}\"",
     "start": "npm run develop",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
-  },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
-  },
-  "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "clean": "gatsby clean"
   }
 }
