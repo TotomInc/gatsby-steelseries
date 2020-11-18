@@ -1,11 +1,8 @@
+/* eslint global-require: "off" */
 module.exports = {
   siteMetadata: {},
 
   plugins: [
-    `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-emotion`,
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -13,12 +10,19 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-emotion`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
     {
-      resolve: `@prismicio/gatsby-source-prismic-graphql`,
+      resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `steelseries`,
-        defaultLang: 'en-us',
-        previews: false,
+        lang: '*',
+        shouldDownloadImage: () => true,
+        schemas: {
+          product: require('./schemas/product.json'),
+        },
       },
     },
   ],
