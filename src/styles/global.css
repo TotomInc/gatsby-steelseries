@@ -1,0 +1,16 @@
+html,
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-feature-settings: "liga", "kern";
+  font-feature-settings: "liga", "kern";
+}
+
+ul {
+  list-style-type: disc;
+  padding-left: 1rem;
+}
+
+ul li {
+  @apply text-sm tracking-wide font-normal mb-2;
+}
