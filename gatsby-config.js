@@ -24,6 +24,7 @@ module.exports = {
         shouldDownloadImage: () => true,
         schemas: {
           product: require('./schemas/product.json'),
+          homepage: require('./schemas/homepage.json'),
         },
       },
     },

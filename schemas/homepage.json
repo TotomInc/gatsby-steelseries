@@ -1,0 +1,168 @@
+{
+  "Main" : {
+    "body" : {
+      "type" : "Slices",
+      "fieldset" : "Slice zone",
+      "config" : {
+        "labels" : {
+          "large_poster" : [ ],
+          "poster_columns" : [ ]
+        },
+        "choices" : {
+          "large_poster" : {
+            "type" : "Slice",
+            "fieldset" : "Large poster",
+            "description" : "Display a large image of a product with details",
+            "icon" : "add_box",
+            "display" : "list",
+            "non-repeat" : {
+              "title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Title"
+                }
+              },
+              "subtitle" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Subtitle"
+                }
+              },
+              "cta" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "CTA"
+                }
+              },
+              "link" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "Link"
+                }
+              },
+              "background_image_vertical_position" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "center", "top", "bottom" ],
+                  "default_value" : "center",
+                  "label" : "Background image vertical position"
+                }
+              },
+              "background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Background image"
+                }
+              }
+            },
+            "repeat" : { }
+          },
+          "poster_columns" : {
+            "type" : "Slice",
+            "fieldset" : "Poster columns",
+            "description" : "Display 2 large images of products in the same row",
+            "icon" : "add_to_photos",
+            "display" : "list",
+            "non-repeat" : {
+              "left_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Left title"
+                }
+              },
+              "left_subtitle" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Left subtitle"
+                }
+              },
+              "left_cta" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "Left CTA"
+                }
+              },
+              "left_link" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "Left link"
+                }
+              },
+              "left_background_image_vertical_position" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "center", "top", "bottom" ],
+                  "default_value" : "center",
+                  "label" : "Left background image vertical position"
+                }
+              },
+              "left_background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Left background image"
+                }
+              },
+              "right_title" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading2",
+                  "label" : "Right title"
+                }
+              },
+              "right_subtitle" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading3",
+                  "label" : "Right subtitle"
+                }
+              },
+              "right_cta" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "Right CTA"
+                }
+              },
+              "right_link" : {
+                "type" : "StructuredText",
+                "config" : {
+                  "single" : "heading5",
+                  "label" : "Right link"
+                }
+              },
+              "right_background_image_vertical_position" : {
+                "type" : "Select",
+                "config" : {
+                  "options" : [ "center", "top", "bottom" ],
+                  "default_value" : "center",
+                  "label" : "Right background image vertical position"
+                }
+              },
+              "right_background_image" : {
+                "type" : "Image",
+                "config" : {
+                  "constraint" : { },
+                  "thumbnails" : [ ],
+                  "label" : "Right background image"
+                }
+              }
+            },
+            "repeat" : { }
+          }
+        }
+      }
+    }
+  }
+}
