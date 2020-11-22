@@ -176,8 +176,6 @@ const IndexPage = ({ data: { allPrismicProduct, prismicHomepage } }) => {
       </div>
 
       <div className="p-4">
-        <h1 className="font-replica-pro font-black text-4xl mb-8">All our products</h1>
-
         <div className="flex flex-wrap max-w-screen-2xl 2xl:mx-auto">
           {products.map((product) => (
             <Card product={product} key={product.id} />
