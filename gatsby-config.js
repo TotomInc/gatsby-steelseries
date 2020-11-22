@@ -15,6 +15,7 @@ module.exports = {
     `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-plugin-react-svg`,
     {
       resolve: `gatsby-source-prismic`,
       options: {
