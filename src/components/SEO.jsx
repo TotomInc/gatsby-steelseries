@@ -10,7 +10,7 @@ const SEO = ({ pageTitle, pageDescription, pageUrl, shareTitle, shareDescription
     <meta property="og:type" content="article" />
     <meta property="og:title" content={shareTitle} />
     <meta property="og:description" content={shareDescription} />
-    <meta property="og:image" content={shareImage} />
+    <meta property="og:image" content={shareImage || 'https://totominc.steelseries.io/default-share-image.png'} />
 
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:creator" content="SteelSeries" />

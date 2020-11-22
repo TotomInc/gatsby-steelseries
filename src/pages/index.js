@@ -55,10 +55,9 @@ const IndexPage = ({ data: { allPrismicProduct } }) => {
       <SEO
         pageTitle="SteelSeries Replica Website | Made with Gatsby &amp; Prismic.io"
         pageDescription="A SteelSeries e-commerce replica website made with Gatsby (React SSR) &amp; Prismic.io (headless CMS) as a learning and educational project."
-        pageUrl="https://steelseries.totominc.io"
+        pageUrl="https://steelseries.totominc.io/"
         shareTitle="SteelSeries Replica Website | Made with Gatsby &amp; Prismic.io"
         shareDescription="A SteelSeries e-commerce replica website made with Gatsby (React SSR) &amp; Prismic.io (headless CMS) as a learning and educational project."
-        shareImage="https://steelseries.totominc.io/static/default_share_image.png"
       />
 
       <div className="p-8">
