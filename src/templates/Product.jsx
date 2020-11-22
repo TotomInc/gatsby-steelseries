@@ -127,7 +127,7 @@ const Product = ({ data: { prismicProduct } }) => {
         shareImage={`https://steelseries.totominc.io${data.media_share_image.localFile.childImageSharp.original.src}`}
       />
 
-      <main className="relative p-8 flex flex-col lg:flex-row lg:flex-wrap lg:mx-auto">
+      <main className="relative p-4 flex flex-col lg:flex-row lg:flex-wrap lg:mx-auto">
         <div className="order-1 lg:w-2/3 lg:pr-8 lg:mb-4">
           <img src={data.image.localFile.childImageSharp.original.src} alt="" />
         </div>
