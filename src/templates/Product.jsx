@@ -84,12 +84,12 @@ const Product = ({ data: { prismicProduct } }) => {
   const { data } = prismicProduct;
 
   return (
-    <main className="p-4 flex flex-col">
-      <div className="order-1">
+    <main className="relative p-8 flex flex-col lg:flex-row lg:flex-wrap lg:mx-auto">
+      <div className="order-1 lg:w-2/3 lg:pr-8 lg:mb-4">
         <img src={data.image.localFile.childImageSharp.original.src} alt="" />
       </div>
 
-      <div className="order-2 py-8">
+      <div className="order-2 py-8 lg:w-1/3 lg:p-0 lg:top-8 lg:sticky">
         <h1 className="mb-4 font-replica-pro font-black text-4xl uppercase">{data.title.text}</h1>
 
         <div dangerouslySetInnerHTML={{ __html: data.description.html }} />
@@ -99,7 +99,7 @@ const Product = ({ data: { prismicProduct } }) => {
         <CTA className="mt-4" />
       </div>
 
-      <div className="order-3">
+      <div className="order-3 lg:w-2/3 lg:pr-8">
         <SliceSwitch slices={data.body} />
       </div>
     </main>
