@@ -3,6 +3,10 @@ module.exports = {
   darkMode: 'media',
   theme: {
     extend: {
+      colors: {
+        'steelseries-orange': '#fc4e03',
+      },
+
       fontFamily: {
         'replica-pro': [
           'Replica Pro',
