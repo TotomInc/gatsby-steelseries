@@ -21,6 +21,10 @@ module.exports = {
           'Segoe UI Emoji',
         ],
       },
+
+      spacing: {
+        128: '32rem',
+      },
     },
   },
   variants: {
