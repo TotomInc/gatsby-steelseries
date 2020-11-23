@@ -2,13 +2,46 @@ import React from 'react';
 import { graphql } from 'gatsby';
 
 import { Card } from '../components/product/Card';
+import { SEO } from '../components/SEO';
 
 export const query = graphql`
   query CategoryProducts($id: ID!) {
     prismicCategory(prismicId: { eq: $id }) {
+      uid
+
       data {
         name {
           text
+        }
+
+        page_title {
+          text
+        }
+
+        page_description {
+          text
+        }
+
+        page_url {
+          text
+        }
+
+        share_title {
+          text
+        }
+
+        share_description {
+          text
+        }
+
+        media_share_image {
+          localFile {
+            childImageSharp {
+              original {
+                src
+              }
+            }
+          }
         }
       }
     }
@@ -51,7 +84,11 @@ export const query = graphql`
 `;
 
 const Category = ({ data: { prismicCategory, allPrismicProduct } }) => {
-  const category = prismicCategory.data;
+  const category = {
+    ...prismicCategory.data,
+    uid: prismicCategory.uid,
+  };
+
   const { edges } = allPrismicProduct;
 
   const products = edges.map((edge) => ({
@@ -62,6 +99,15 @@ const Category = ({ data: { prismicCategory, allPrismicProduct } }) => {
 
   return (
     <>
+      <SEO
+        pageTitle={category.page_title.text}
+        pageDescription={category.page_description.text}
+        pageUrl={`https://steelseries.totominc.io/${category.uid}`}
+        shareTitle={category.share_title.text}
+        shareDescription={category.share_description.text}
+        shareImage={`https://steelseries.totominc.io${category.media_share_image.localFile.childImageSharp.original.src}`}
+      />
+
       <div className="px-8 py-4">
         <h1 className="max-w-screen-2xl 2xl:mx-auto 2xl:px-2 font-replica-pro font-black text-black text-4xl">
           {category.name.text}
