@@ -1,40 +1,20 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { Link, graphql } from 'gatsby';
 
 import { HomepageSlicesSwitch } from '../components/homepage/HomepageSlicesSwitch';
-import { Card } from '../components/product/Card';
 import { SEO } from '../components/SEO';
 
 export const query = graphql`
   {
-    allPrismicProduct {
+    allPrismicCategory {
       edges {
         node {
-          id
           uid
 
           data {
-            title {
+            name {
               text
             }
-
-            card_description {
-              html
-            }
-
-            card_image {
-              localFile {
-                childImageSharp {
-                  original {
-                    src
-                  }
-                }
-              }
-            }
-
-            price
-            is_new
-            is_web_only
           }
         }
       }
@@ -148,11 +128,10 @@ export const query = graphql`
   }
 `;
 
-const IndexPage = ({ data: { allPrismicProduct, prismicHomepage } }) => {
-  const products = allPrismicProduct.edges
+const IndexPage = ({ data: { allPrismicCategory, prismicHomepage } }) => {
+  const categories = allPrismicCategory.edges
     .map((edge) => edge.node)
     .map((node) => ({
-      id: node.id,
       uid: node.uid,
       ...node.data,
     }));
@@ -174,11 +153,31 @@ const IndexPage = ({ data: { allPrismicProduct, prismicHomepage } }) => {
       </div>
 
       <div className="p-4">
-        <div className="flex flex-wrap max-w-screen-2xl 2xl:mx-auto">
-          {products.map((product) => (
-            <Card product={product} key={product.id} />
+        <h2 className="mb-8 font-replica-pro font-black text-black text-2xl lg:text-4xl uppercase text-center">
+          Shop by category
+        </h2>
+
+        <ul className="flex flex-wrap items-center justify-center list-none p-0">
+          {categories.map((category) => (
+            <li
+              key={category.uid}
+              className="w-24 md:w-48 mx-8 mb-2 border-2 border-transparent rounded-sm hover:border-black"
+            >
+              <Link
+                to={`/${category.uid}`}
+                className="flex flex-col items-center justify-center font-replica-pro font-bold text-xl pb-2"
+              >
+                <img
+                  className="mb-4 rounded-sm object-contain bg-gray-200"
+                  src="https://via.placeholder.com/350x300"
+                  alt={category.name.text}
+                />
+
+                {category.name.text}
+              </Link>
+            </li>
           ))}
-        </div>
+        </ul>
       </div>
     </>
   );
