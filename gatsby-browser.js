@@ -13,7 +13,7 @@ import './src/styles/fonts.css';
 import { Navbar } from './src/components/Navbar';
 
 export const wrapPageElement = ({ element }) => (
-  <div>
+  <div className="min-h-screen w-full">
     <Navbar />
 
     {element}
