@@ -16,6 +16,12 @@ module.exports = {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-svg`,
     {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        icon: `src/images/icon.png`,
+      },
+    },
+    {
       resolve: `gatsby-source-prismic`,
       options: {
         repositoryName: `steelseries`,
