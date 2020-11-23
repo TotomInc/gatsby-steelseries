@@ -12,8 +12,23 @@ const path = require('path');
 exports.createPages = async ({ graphql, actions }) => {
   const { createPage } = actions;
 
-  const template = path.resolve('src/templates/Product.jsx');
-  const pages = await graphql(`
+  const categoryTemplate = path.resolve('src/templates/Category.jsx');
+  const productTemplate = path.resolve('src/templates/Product.jsx');
+
+  const categories = await graphql(`
+    {
+      allPrismicCategory {
+        edges {
+          node {
+            uid
+            prismicId
+          }
+        }
+      }
+    }
+  `);
+
+  const products = await graphql(`
     {
       allPrismicProduct {
         edges {
@@ -26,10 +41,20 @@ exports.createPages = async ({ graphql, actions }) => {
     }
   `);
 
-  pages.data.allPrismicProduct.edges.forEach((edge) => {
+  categories.data.allPrismicCategory.edges.forEach((edge) => {
     createPage({
       path: `/${edge.node.uid}`,
-      component: template,
+      component: categoryTemplate,
+      context: {
+        id: edge.node.prismicId,
+      },
+    });
+  });
+
+  products.data.allPrismicProduct.edges.forEach((edge) => {
+    createPage({
+      path: `/${edge.node.uid}`,
+      component: productTemplate,
       context: {
         uid: edge.node.uid,
       },
