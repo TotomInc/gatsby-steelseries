@@ -6,7 +6,7 @@ const Card = ({ product }) => (
     <Link to={`/${product.uid}`} className="no-underline text-black">
       <div className="relative w-full flex items-center justify-center h-80 bg-gray-200">
         <img
-          className="block object-contain w-full"
+          className="block object-contain h-full py-6 sm:w-full sm:py-0"
           src={product.card_image.localFile.childImageSharp.original.src}
           alt=""
         />
