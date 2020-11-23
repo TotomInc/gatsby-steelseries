@@ -159,8 +159,6 @@ const IndexPage = ({ data: { allPrismicProduct, prismicHomepage } }) => {
 
   const homepage = prismicHomepage.data;
 
-  console.log(homepage);
-
   return (
     <>
       <SEO
