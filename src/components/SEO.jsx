@@ -17,6 +17,8 @@ const SEO = ({ pageTitle, pageDescription, pageUrl, shareTitle, shareDescription
     <meta name="twitter:title" content={shareTitle} />
     <meta name="twitter:description" content={shareDescription} />
     <meta name="twitter:image" content={shareImage} />
+
+    <meta name="google-site-verification" content="N6sosyHR9ntKRDOF-bzLRS1Yy_Df98lyZEngPwvaqfI" />
   </Helmet>
 );
 
