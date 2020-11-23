@@ -1,0 +1,11 @@
+{
+  "Main": {
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Name"
+      }
+    }
+  }
+}

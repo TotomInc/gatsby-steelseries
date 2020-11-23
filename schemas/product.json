@@ -1,240 +1,250 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "slug",
-        "placeholder" : "Unique identifier based on the product title."
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "slug",
+        "placeholder": "Unique identifier based on the product title."
       }
     },
-    "title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Title",
-        "placeholder" : "Product title."
+    "title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Title",
+        "placeholder": "Product title."
       }
     },
-    "card_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, strong, em, list-item, o-list-item",
-        "label" : "Card description",
-        "placeholder" : "Product short-description in card."
+    "category": {
+      "type": "Link",
+      "config": {
+        "select": "document",
+        "customtypes": [
+          "category"
+        ],
+        "label": "Category"
       }
     },
-    "description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "multi" : "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, rtl",
-        "allowTargetBlank" : true,
-        "label" : "Description",
-        "placeholder" : "Full description for the product page."
+    "card_description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em, list-item, o-list-item",
+        "label": "Card description",
+        "placeholder": "Product short-description in card."
       }
     },
-    "price" : {
-      "type" : "Number",
-      "config" : {
-        "label" : "Price",
-        "placeholder" : "Product price."
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, heading2, heading3, heading4, heading5, heading6, strong, em, hyperlink, list-item, o-list-item, rtl",
+        "allowTargetBlank": true,
+        "label": "Description",
+        "placeholder": "Full description for the product page."
       }
     },
-    "member_price" : {
-      "type" : "Number",
-      "config" : {
-        "label" : "Member price",
-        "placeholder" : "Reduced price for a registered member."
+    "price": {
+      "type": "Number",
+      "config": {
+        "label": "Price",
+        "placeholder": "Product price."
       }
     },
-    "member_discount" : {
-      "type" : "Number",
-      "config" : {
-        "label" : "Member discount",
-        "placeholder" : "Discount price percentage for a registered member."
+    "member_price": {
+      "type": "Number",
+      "config": {
+        "label": "Member price",
+        "placeholder": "Reduced price for a registered member."
       }
     },
-    "is_new" : {
-      "type" : "Boolean",
-      "config" : {
-        "placeholder_false" : "Not a new product",
-        "placeholder_true" : "It's a new product",
-        "default_value" : false,
-        "label" : "Is new"
+    "member_discount": {
+      "type": "Number",
+      "config": {
+        "label": "Member discount",
+        "placeholder": "Discount price percentage for a registered member."
       }
     },
-    "is_web_only" : {
-      "type" : "Boolean",
-      "config" : {
-        "placeholder_false" : "Isn't a web-only product",
-        "placeholder_true" : "It's a web-only product",
-        "default_value" : false,
-        "label" : "Is web-only"
+    "is_new": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Not a new product",
+        "placeholder_true": "It's a new product",
+        "default_value": false,
+        "label": "Is new"
       }
     },
-    "card_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "Card image"
+    "is_web_only": {
+      "type": "Boolean",
+      "config": {
+        "placeholder_false": "Isn't a web-only product",
+        "placeholder_true": "It's a web-only product",
+        "default_value": false,
+        "label": "Is web-only"
       }
     },
-    "image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "Image"
+    "card_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Card image"
       }
     },
-    "body" : {
-      "type" : "Slices",
-      "fieldset" : "Slice zone",
-      "config" : {
-        "labels" : {
-          "large_image" : [ ],
-          "images_column" : [ ]
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Image"
+      }
+    },
+    "body": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "large_image": [],
+          "images_column": []
         },
-        "choices" : {
-          "large_image" : {
-            "type" : "Slice",
-            "fieldset" : "Large image",
-            "description" : "Display a large, wide image.",
-            "icon" : "image",
-            "display" : "list",
-            "non-repeat" : {
-              "large_image" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : { },
-                  "thumbnails" : [ ],
-                  "label" : "Large image"
+        "choices": {
+          "large_image": {
+            "type": "Slice",
+            "fieldset": "Large image",
+            "description": "Display a large, wide image.",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
+              "large_image": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Large image"
                 }
               }
             },
-            "repeat" : { }
+            "repeat": {}
           },
-          "images_column" : {
-            "type" : "Slice",
-            "fieldset" : "Images column",
-            "description" : "Display 2 images in the same column.",
-            "icon" : "image",
-            "display" : "list",
-            "non-repeat" : {
-              "image_left" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : { },
-                  "thumbnails" : [ ],
-                  "label" : "Image left"
+          "images_column": {
+            "type": "Slice",
+            "fieldset": "Images column",
+            "description": "Display 2 images in the same column.",
+            "icon": "image",
+            "display": "list",
+            "non-repeat": {
+              "image_left": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image left"
                 }
               },
-              "image_right" : {
-                "type" : "Image",
-                "config" : {
-                  "constraint" : { },
-                  "thumbnails" : [ ],
-                  "label" : "Image right"
+              "image_right": {
+                "type": "Image",
+                "config": {
+                  "constraint": {},
+                  "thumbnails": [],
+                  "label": "Image right"
                 }
               }
             },
-            "repeat" : { }
+            "repeat": {}
           }
         }
       }
     }
   },
-  "SEO" : {
-    "page_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Page title",
-        "placeholder" : "Title of the page."
+  "SEO": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Page title",
+        "placeholder": "Title of the page."
       }
     },
-    "page_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading2",
-        "label" : "Page description",
-        "placeholder" : "Description of the page."
+    "page_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page description",
+        "placeholder": "Description of the page."
       }
     },
-    "page_url" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading3",
-        "label" : "Page URL",
-        "placeholder" : "Page URL of this product."
+    "page_url": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Page URL",
+        "placeholder": "Page URL of this product."
       }
     },
-    "share_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Share title",
-        "placeholder" : "Title of the shared link for Facebook, Twitter, Instagram, ..."
+    "share_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Share title",
+        "placeholder": "Title of the shared link for Facebook, Twitter, Instagram, ..."
       }
     },
-    "share_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading2",
-        "label" : "Share description",
-        "placeholder" : "Description of the shared link for Facebook, Twitter, Instagram, ..."
+    "share_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Share description",
+        "placeholder": "Description of the shared link for Facebook, Twitter, Instagram, ..."
       }
     },
-    "media_share_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "Media share image"
+    "media_share_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Media share image"
       }
     }
   },
-  "Specifications" : {
-    "body1" : {
-      "type" : "Slices",
-      "fieldset" : "Slice zone",
-      "config" : {
-        "labels" : {
-          "specification" : [ ]
+  "Specifications": {
+    "body1": {
+      "type": "Slices",
+      "fieldset": "Slice zone",
+      "config": {
+        "labels": {
+          "specification": []
         },
-        "choices" : {
-          "specification" : {
-            "type" : "Slice",
-            "fieldset" : "Specification",
-            "description" : "Product specifications.",
-            "icon" : "text_fields",
-            "display" : "list",
-            "non-repeat" : {
-              "specification_category_name" : {
-                "type" : "StructuredText",
-                "config" : {
-                  "single" : "heading3",
-                  "label" : "Specification category name",
-                  "placeholder" : "Category name of these specifications."
+        "choices": {
+          "specification": {
+            "type": "Slice",
+            "fieldset": "Specification",
+            "description": "Product specifications.",
+            "icon": "text_fields",
+            "display": "list",
+            "non-repeat": {
+              "specification_category_name": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading3",
+                  "label": "Specification category name",
+                  "placeholder": "Category name of these specifications."
                 }
               }
             },
-            "repeat" : {
-              "specification_title" : {
-                "type" : "StructuredText",
-                "config" : {
-                  "single" : "heading4",
-                  "label" : "Specification title",
-                  "placeholder" : "Title of the specification."
+            "repeat": {
+              "specification_title": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "heading4",
+                  "label": "Specification title",
+                  "placeholder": "Title of the specification."
                 }
               },
-              "specification_description" : {
-                "type" : "StructuredText",
-                "config" : {
-                  "single" : "paragraph, strong, em, hyperlink, rtl",
-                  "allowTargetBlank" : true,
-                  "label" : "Specification description",
-                  "placeholder" : "Description of the specification."
+              "specification_description": {
+                "type": "StructuredText",
+                "config": {
+                  "single": "paragraph, strong, em, hyperlink, rtl",
+                  "allowTargetBlank": true,
+                  "label": "Specification description",
+                  "placeholder": "Description of the specification."
                 }
               }
             }
@@ -243,38 +253,38 @@
       }
     }
   },
-  "FAQ" : {
-    "faq_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading4",
-        "label" : "FAQ Title",
-        "placeholder" : "Title of the FAQ section."
+  "FAQ": {
+    "faq_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading4",
+        "label": "FAQ Title",
+        "placeholder": "Title of the FAQ section."
       }
     },
-    "faq" : {
-      "type" : "Group",
-      "config" : {
-        "fields" : {
-          "faq_title" : {
-            "type" : "StructuredText",
-            "config" : {
-              "single" : "heading4",
-              "label" : "FAQ title",
-              "placeholder" : "Title of the FAQ question."
+    "faq": {
+      "type": "Group",
+      "config": {
+        "fields": {
+          "faq_title": {
+            "type": "StructuredText",
+            "config": {
+              "single": "heading4",
+              "label": "FAQ title",
+              "placeholder": "Title of the FAQ question."
             }
           },
-          "faq_answer" : {
-            "type" : "StructuredText",
-            "config" : {
-              "multi" : "paragraph, strong, em, hyperlink, list-item, o-list-item, rtl",
-              "allowTargetBlank" : true,
-              "label" : "FAQ answer",
-              "placeholder" : "Answer of the FAQ question."
+          "faq_answer": {
+            "type": "StructuredText",
+            "config": {
+              "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item, rtl",
+              "allowTargetBlank": true,
+              "label": "FAQ answer",
+              "placeholder": "Answer of the FAQ question."
             }
           }
         },
-        "label" : "FAQ"
+        "label": "FAQ"
       }
     }
   }

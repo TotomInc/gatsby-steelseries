@@ -22,6 +22,7 @@ module.exports = {
         lang: '*',
         shouldDownloadImage: () => true,
         schemas: {
+          category: require('./schemas/category.json'),
           product: require('./schemas/product.json'),
           homepage: require('./schemas/homepage.json'),
         },
