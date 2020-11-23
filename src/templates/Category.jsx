@@ -63,7 +63,9 @@ const Category = ({ data: { prismicCategory, allPrismicProduct } }) => {
   return (
     <>
       <div className="px-8 py-4">
-        <h1 className="font-replica-pro font-black text-black text-4xl">{category.name.text}</h1>
+        <h1 className="max-w-screen-2xl 2xl:mx-auto 2xl:px-2 font-replica-pro font-black text-black text-4xl">
+          {category.name.text}
+        </h1>
       </div>
 
       <div className="px-6">
