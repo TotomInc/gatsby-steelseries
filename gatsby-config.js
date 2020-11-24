@@ -1,6 +1,8 @@
 /* eslint global-require: "off" */
 module.exports = {
-  siteMetadata: {},
+  siteMetadata: {
+    siteUrl: 'https://steelseries.totominc.io',
+  },
 
   plugins: [
     {
@@ -10,6 +12,7 @@ module.exports = {
         path: `${__dirname}/src/images`,
       },
     },
+    `gatsby-plugin-sitemap`,
     `gatsby-plugin-react-helmet`,
     `gatsby-plugin-postcss`,
     `gatsby-transformer-sharp`,
