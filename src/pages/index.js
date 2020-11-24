@@ -51,6 +51,11 @@ export const query = graphql`
               background_image {
                 localFile {
                   childImageSharp {
+                    fluid(maxWidth: 1920, quality: 90) {
+                      src
+                      srcWebp
+                    }
+
                     original {
                       src
                     }
@@ -86,6 +91,11 @@ export const query = graphql`
               left_background_image {
                 localFile {
                   childImageSharp {
+                    fluid(maxWidth: 1920, quality: 90) {
+                      src
+                      srcWebp
+                    }
+
                     original {
                       src
                     }
@@ -114,6 +124,11 @@ export const query = graphql`
               right_background_image {
                 localFile {
                   childImageSharp {
+                    fluid(maxWidth: 1920, quality: 90) {
+                      src
+                      srcWebp
+                    }
+
                     original {
                       src
                     }

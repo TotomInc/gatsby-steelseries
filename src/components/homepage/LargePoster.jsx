@@ -11,8 +11,8 @@ const LargePoster = ({ slice }) => {
       href={slice.link.text}
       target="_blank"
       rel="noreferrer"
-      className={`relative block h-128 p-4 mb-4 bg-cover ${bgAlign || ''}`}
-      style={{ backgroundImage: `url(${slice.background_image.localFile.childImageSharp.original.src})` }}
+      className={`relative block h-128 p-4 mb-4 bg-cover bg-gray-500 ${bgAlign || ''}`}
+      style={{ backgroundImage: `url(${slice.background_image.localFile.childImageSharp.fluid.srcWebp})` }}
     >
       <div
         className="overlay absolute top-0 bottom-0 left-0 right-0 pointer-events-none"
