@@ -3,6 +3,7 @@ import { graphql } from 'gatsby';
 
 import { CTA } from '../components/product/CTA';
 import { SliceSwitch } from '../components/product/SliceSwitch';
+import { Specifications } from '../components/product/Specifications';
 import { SEO } from '../components/SEO';
 
 export const query = graphql`
@@ -108,6 +109,28 @@ export const query = graphql`
             }
           }
         }
+
+        body1 {
+          ... on PrismicProductBody1Specification {
+            id
+
+            primary {
+              specification_category_name {
+                text
+              }
+            }
+
+            items {
+              specification_title {
+                text
+              }
+
+              specification_description {
+                html
+              }
+            }
+          }
+        }
       }
     }
   }
@@ -146,6 +169,10 @@ const Product = ({ data: { prismicProduct } }) => {
           <SliceSwitch slices={data.body} />
         </div>
       </main>
+
+      <div className="relative p-4">
+        <Specifications specifications={data.body1} />
+      </div>
     </>
   );
 };
