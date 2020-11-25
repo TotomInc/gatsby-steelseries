@@ -14,6 +14,10 @@ export const query = graphql`
           text
         }
 
+        description {
+          html
+        }
+
         page_title {
           text
         }
@@ -109,9 +113,14 @@ const Category = ({ data: { prismicCategory, allPrismicProduct } }) => {
       />
 
       <div className="px-8 py-4">
-        <h1 className="max-w-screen-2xl 2xl:mx-auto 2xl:px-2 font-replica-pro font-black text-black text-4xl">
+        <h1 className="max-w-screen-2xl 2xl:mx-auto 2xl:px-2 mb-4 font-replica-pro font-black text-black text-4xl">
           {category.name.text}
         </h1>
+
+        <div
+          className="max-w-4xl mb-4 text-base text-black"
+          dangerouslySetInnerHTML={{ __html: category.description.html }}
+        />
       </div>
 
       <div className="px-6">
