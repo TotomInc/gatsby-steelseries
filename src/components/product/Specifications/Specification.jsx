@@ -9,7 +9,7 @@ const Specification = ({ title, items }) => {
     <div className="mb-6">
       <button
         type="button"
-        className="block w-full py-4 rounded-sm bg-gray-200 text-2xl text-gray-700 focus:ring-gray-300 focus:outline-none focus:ring"
+        className="block w-full py-4 px-8 rounded-sm text-left bg-gray-200 text-2xl transition-all duration-150 text-gray-700 hover:bg-gray-700 hover:text-gray-200 focus:ring-gray-300 focus:outline-none focus:ring"
         onClick={() => setIsActive(!isActive)}
       >
         {title}
@@ -21,7 +21,7 @@ const Specification = ({ title, items }) => {
         }`}
       >
         {items.map(({ specification_title, specification_description }) => (
-          <div className="lg:flex lg:items-center py-4 mx-8 border-b border-gray-200">
+          <div className="lg:flex lg:items-center py-6 mx-12 border-b border-gray-200">
             <p className="lg:w-56 mb-2 lg:mb-0 text-base leading-6">{specification_title.text}</p>
 
             <div className="text-base leading-6" dangerouslySetInnerHTML={{ __html: specification_description.html }} />

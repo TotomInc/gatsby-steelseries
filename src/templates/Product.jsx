@@ -3,7 +3,7 @@ import { graphql } from 'gatsby';
 
 import { CTA } from '../components/product/CTA';
 import { SliceSwitch } from '../components/product/SliceSwitch';
-import { Specifications } from '../components/product/Specifications';
+import { Specifications } from '../components/product/Specifications/Specifications';
 import { SEO } from '../components/SEO';
 
 export const query = graphql`
