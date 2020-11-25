@@ -1,66 +1,82 @@
 {
-  "Main" : {
-    "uid" : {
-      "type" : "UID",
-      "config" : {
-        "label" : "Slug"
+  "Main": {
+    "uid": {
+      "type": "UID",
+      "config": {
+        "label": "Slug"
       }
     },
-    "name" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading3",
-        "label" : "Name"
+    "name": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Name"
+      }
+    },
+    "description": {
+      "type": "StructuredText",
+      "config": {
+        "multi": "paragraph, strong, em, hyperlink, list-item, o-list-item, rtl",
+        "allowTargetBlank": true,
+        "label": "Description"
+      }
+    },
+    "image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Image"
       }
     }
   },
-  "SEO" : {
-    "page_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Page title",
-        "placeholder" : "Title of the page."
+  "SEO": {
+    "page_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Page title",
+        "placeholder": "Title of the page."
       }
     },
-    "page_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading2",
-        "label" : "Page description",
-        "placeholder" : "Description of the page."
+    "page_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Page description",
+        "placeholder": "Description of the page."
       }
     },
-    "page_url" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading3",
-        "label" : "Page URL",
-        "placeholder" : "Page URL of this product."
+    "page_url": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading3",
+        "label": "Page URL",
+        "placeholder": "Page URL of this product."
       }
     },
-    "share_title" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading1",
-        "label" : "Share title",
-        "placeholder" : "Title of the shared link for Facebook, Twitter, Instagram, ..."
+    "share_title": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading1",
+        "label": "Share title",
+        "placeholder": "Title of the shared link for Facebook, Twitter, Instagram, ..."
       }
     },
-    "share_description" : {
-      "type" : "StructuredText",
-      "config" : {
-        "single" : "heading2",
-        "label" : "Share description",
-        "placeholder" : "Description of the shared link for Facebook, Twitter, Instagram, ..."
+    "share_description": {
+      "type": "StructuredText",
+      "config": {
+        "single": "heading2",
+        "label": "Share description",
+        "placeholder": "Description of the shared link for Facebook, Twitter, Instagram, ..."
       }
     },
-    "media_share_image" : {
-      "type" : "Image",
-      "config" : {
-        "constraint" : { },
-        "thumbnails" : [ ],
-        "label" : "Media share image"
+    "media_share_image": {
+      "type": "Image",
+      "config": {
+        "constraint": {},
+        "thumbnails": [],
+        "label": "Media share image"
       }
     }
   }
