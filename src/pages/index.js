@@ -15,6 +15,17 @@ export const query = graphql`
             name {
               text
             }
+
+            image {
+              localFile {
+                childImageSharp {
+                  fluid {
+                    srcWebp
+                    src
+                  }
+                }
+              }
+            }
           }
         }
       }
@@ -182,11 +193,25 @@ const IndexPage = ({ data: { allPrismicCategory, prismicHomepage } }) => {
                 to={`/${category.uid}`}
                 className="flex flex-col items-center justify-center font-replica-pro font-bold text-xl pb-2"
               >
-                <img
-                  className="mb-4 rounded-sm object-contain bg-gray-200"
-                  src="https://via.placeholder.com/350x300"
-                  alt={category.name.text}
-                />
+                <picture>
+                  <source
+                    className="mb-4 rounded-sm object-contain bg-gray-200"
+                    srcSet={category.image.localFile.childImageSharp.fluid.srcWebp}
+                    type="image/webp"
+                  />
+
+                  <source
+                    className="mb-4 rounded-sm object-contain bg-gray-200"
+                    srcSet={category.image.localFile.childImageSharp.fluid.src}
+                    type="image/png"
+                  />
+
+                  <img
+                    className="mb-4 rounded-sm object-contain bg-gray-200"
+                    src={category.image.localFile.childImageSharp.fluid.src}
+                    alt={category.name.text}
+                  />
+                </picture>
 
                 {category.name.text}
               </Link>
