@@ -21,7 +21,7 @@ const Specification = ({ title, items }) => {
         }`}
       >
         {items.map(({ specification_title, specification_description }) => (
-          <div className="lg:flex lg:items-center py-6 mx-12 border-b border-gray-200">
+          <div key={specification_title.text} className="lg:flex lg:items-center py-6 mx-12 border-b border-gray-200">
             <p className="lg:w-56 mb-2 lg:mb-0 text-base leading-6">{specification_title.text}</p>
 
             <div className="text-base leading-6" dangerouslySetInnerHTML={{ __html: specification_description.html }} />
