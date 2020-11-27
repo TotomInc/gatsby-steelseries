@@ -1,0 +1,81 @@
+.container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.25s ease-in-out;
+  pointer-events: none;
+
+  @apply bg-black bg-opacity-60;
+}
+
+.active-container {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.inner-container {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem 3rem;
+
+  @apply rounded-sm bg-gray-200;
+}
+
+.image-container {
+  display: none;
+  position: relative;
+}
+
+.image-container img {
+  display: block;
+  width: 56rem;
+  object-fit: contain;
+  user-select: none;
+
+  @apply rounded-sm;
+}
+
+.active-image {
+  display: block;
+}
+
+.close-icon {
+  position: absolute;
+  z-index: 1;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 1.5rem;
+  cursor: pointer;
+}
+
+.control-icon {
+  z-index: 0;
+  width: 3rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.control-icon-left {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+}
+
+.control-icon-right {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.control-icon-right {}
