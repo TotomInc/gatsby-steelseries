@@ -1,0 +1,9 @@
+.faq-block:nth-child(odd) {
+  @apply lg:mr-4;
+}
+
+@media (min-width: 1024px) {
+  .faq-block {
+    width: calc(50% - 1rem);
+  }
+}

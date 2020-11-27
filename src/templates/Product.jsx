@@ -4,6 +4,7 @@ import { graphql } from 'gatsby';
 import { CTA } from '../components/product/CTA';
 import { SliceSwitch } from '../components/product/SliceSwitch';
 import { Specifications } from '../components/product/Specifications/Specifications';
+import { FAQ } from '../components/product/FAQ/FAQ';
 import { SEO } from '../components/SEO';
 
 export const query = graphql`
@@ -31,6 +32,20 @@ export const query = graphql`
                 src
               }
             }
+          }
+        }
+
+        faq_title {
+          text
+        }
+
+        faq {
+          faq_title {
+            text
+          }
+
+          faq_answer {
+            html
           }
         }
 
@@ -172,6 +187,10 @@ const Product = ({ data: { prismicProduct } }) => {
 
       <div className="relative p-4">
         <Specifications specifications={data.body1} />
+      </div>
+
+      <div className="relative px-4 py-8 bg-gray-200">
+        <FAQ faq={{ title: data.faq_title, faq: data.faq }} />
       </div>
     </>
   );
