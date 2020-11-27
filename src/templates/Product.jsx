@@ -155,9 +155,6 @@ export const query = graphql`
 const Product = ({ data: { prismicProduct } }) => {
   const { uid, data } = prismicProduct;
 
-  const [isCarouselActive, setIsCarouselActive] = useState(false);
-  const [carouselImageIndex, setCarouselImageIndex] = useState(0);
-
   const images = [
     data.image.localFile.childImageSharp.original.src,
     data.body
@@ -178,6 +175,9 @@ const Product = ({ data: { prismicProduct } }) => {
       .flat(),
   ].flat();
 
+  const [isCarouselActive, setIsCarouselActive] = useState(false);
+  const [currentCarouselImage, setCurrentCarouselImage] = useState(images[0]);
+
   return (
     <>
       <SEO
@@ -195,7 +195,7 @@ const Product = ({ data: { prismicProduct } }) => {
             className="order-1 lg:w-2/3 lg:pr-8 lg:mb-4"
             onClick={() => {
               setIsCarouselActive(true);
-              setCarouselImageIndex(0);
+              setCurrentCarouselImage(data.image.localFile.childImageSharp.original.src);
             }}
             onKeyDown={() => null}
             role="button"
@@ -215,7 +215,11 @@ const Product = ({ data: { prismicProduct } }) => {
           </div>
 
           <div className="order-3 lg:w-2/3 lg:pr-8">
-            <SliceSwitch slices={data.body} setIsCarouselActive={setIsCarouselActive} />
+            <SliceSwitch
+              slices={data.body}
+              setIsCarouselActive={setIsCarouselActive}
+              setCurrentCarouselImage={setCurrentCarouselImage}
+            />
           </div>
         </main>
 
@@ -231,8 +235,7 @@ const Product = ({ data: { prismicProduct } }) => {
           images={images}
           isCarouselActive={isCarouselActive}
           setIsCarouselActive={setIsCarouselActive}
-          carouselImageIndex={carouselImageIndex}
-          setCarouselImageIndex={setCarouselImageIndex}
+          currentCarouselImage={currentCarouselImage}
         />
       </div>
     </>

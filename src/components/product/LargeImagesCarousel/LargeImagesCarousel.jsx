@@ -1,24 +1,28 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 
 import { Close } from '../../icons/Close';
 import { ChevronLeft } from '../../icons/ChevronLeft';
 import { ChevronRight } from '../../icons/ChevronRight';
 import styles from './LargeImagesCarousel.module.css';
 
-const LargeImagesCarousel = ({
-  images,
-  isCarouselActive,
-  setIsCarouselActive,
-  carouselImageIndex,
-  setCarouselImageIndex,
-}) => {
+const LargeImagesCarousel = ({ images, isCarouselActive, setIsCarouselActive, currentCarouselImage }) => {
+  const [imageIndex, setImageIndex] = useState(0);
+
   const changeImage = (direction) => {
     if (direction === 'right') {
-      setCarouselImageIndex(carouselImageIndex + 1 > images.length - 1 ? 0 : carouselImageIndex + 1);
+      setImageIndex(imageIndex + 1 > images.length - 1 ? 0 : imageIndex + 1);
     } else if (direction === 'left') {
-      setCarouselImageIndex(carouselImageIndex === 0 ? images.length - 1 : carouselImageIndex - 1);
+      setImageIndex(imageIndex === 0 ? images.length - 1 : imageIndex - 1);
     }
   };
+
+  useEffect(() => {
+    const index = images.findIndex((image) => image === currentCarouselImage);
+
+    if (index > -1) {
+      setImageIndex(index);
+    }
+  }, [images, currentCarouselImage]);
 
   return (
     <div className={`${styles.container} ${isCarouselActive ? styles.activeContainer : ''}`}>
@@ -45,10 +49,7 @@ const LargeImagesCarousel = ({
 
         <div>
           {images.map((image, i) => (
-            <div
-              key={image}
-              className={`${styles.imageContainer} ${i === carouselImageIndex ? styles.activeImage : ''}`}
-            >
+            <div key={image} className={`${styles.imageContainer} ${i === imageIndex ? styles.activeImage : ''}`}>
               <img src={image} alt="" />
             </div>
           ))}

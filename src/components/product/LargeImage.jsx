@@ -1,10 +1,13 @@
 import React from 'react';
 
-const LargeImage = ({ image, setIsCarouselActive }) => (
+const LargeImage = ({ image, setIsCarouselActive, setCurrentCarouselImage }) => (
   <section className="flex mb-4">
     <div
       className="w-full bg-gray-200 rounded-sm border-2 border-transparent hover:border-black"
-      onClick={() => setIsCarouselActive(true)}
+      onClick={() => {
+        setIsCarouselActive(true);
+        setCurrentCarouselImage(image.large_image.localFile.childImageSharp.original.src);
+      }}
       onKeyUp={() => null}
       role="button"
       tabIndex="0"
