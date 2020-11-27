@@ -19,9 +19,11 @@ const LargePoster = ({ slice }) => {
         style={{ background: 'linear-gradient(270deg,transparent 50%,rgba(0,0,0,.5))' }}
       />
 
-      <h3 className="relative font-replica-pro text-5xl text-white uppercase font-black">{slice.title.text}</h3>
+      <h3 className="relative font-replica-pro text-3xl lg:text-5xl text-white uppercase font-black">
+        {slice.title.text}
+      </h3>
 
-      <p className="relative mb-4 font-semibold text-2xl text-white">{slice.subtitle.text}</p>
+      <p className="relative mb-4 font-semibold text-xl lg:text-2xl text-white">{slice.subtitle.text}</p>
 
       <p className="relative text-2xl font-bold text-white">{slice.cta.text} &gt;</p>
     </a>
